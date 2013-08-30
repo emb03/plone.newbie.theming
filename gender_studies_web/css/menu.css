@@ -1,0 +1,260 @@
+#nav-menu ul.menu {
+font-weight: bold;
+position: relative;
+z-index: 597;
+float: left;
+font-family: "Trebuchet MS", Arial, Arial ,san-serif;
+font-size : 12px;
+font-weight:normal;
+text-transform:uppercase !important;
+}
+
+#nav-menu ul.menu,
+#nav-menu ul.menu li,
+#nav-menu ul.menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+#nav-menu ul.menu li {
+color: #FFA347;
+padding-top:3px;
+float: left;
+zoom: 1;
+}
+
+#nav-menu ul.menu li a {
+display:block;
+color: #FFA347;
+padding: 7px 10px;
+}
+
+#nav-menu ul.menu li.hover,
+#nav-menu ul.menu li:hover {
+border-top:#FFDEBD 3px solid; 
+color: #FFDEBD;
+position: relative;
+z-index: 599;
+cursor: default;
+padding-top:0px;
+margin-top:-1px;
+}
+
+#nav-menu ul.menu ul li.hover,
+#nav-menu ul.menu ul li:hover {
+/*border-bottom:#eee 1px dotted;*/
+border-top:none;
+color: #FFDEBD;
+background-color: #FF7F00;
+padding-top:3px;
+}
+
+
+/* -- COLORS AND DECORATES menu LINKS  -- */
+
+#nav-menu ul.menu a:link, #nav-menu ul.menu a:visited { 
+color: #FFA347; 
+text-decoration: none;
+}
+
+
+#nav-menu ul.menu ul a, #nav-menu ul.menu ul a:link, #nav-menu ul.menu ul a:visited, #nav-menu ul.menu a:active { 
+color: #FFDEBD;
+text-decoration: none;
+text-transform:capitalize;
+display:block;
+}
+
+#nav-menu ul.menu a:hover    {
+color: #FFDEBD;
+}
+
+/* -- Sub Menu  -- */
+
+#nav-menu ul.menu ul {
+visibility: hidden;
+position: absolute;
+right: 0;
+z-index: 598;
+width: 125px;
+top: auto !important;
+bottom: 94%;
+text-align:right;
+
+}
+
+#nav-menu ul.menu ul li {
+float: none;
+font-weight: normal;
+border-bottom:#eee 1px dotted;
+}
+
+
+#nav-menu ul.menu ul li:last-child {
+border-bottom-color: #FFDEBD;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    float: none;
+    font-weight: normal;
+
+}
+
+#nav-menu ul.menu ul ul {
+bottom: 1px;
+right: 99%;
+}
+
+#nav-menu ul.menu li:hover > ul {
+visibility: visible;
+filter:alpha(opacity=85);
+-moz-opacity:0.85;
+-khtml-opacity: 0.85;
+opacity: 0.85;
+background: #001F38;
+color: #111;
+}
+#nav-menu ul.menu ul {
+margin-bottom:2px;
+}
+#nav-menu ul.menu ul a:hover    {
+color:#001F38;
+/*border-bottom:#FFDEBD 2px solid;*/
+
+}
+#nav-menu ul.menu ul a:link    {
+color:#FFDEBD;
+text-transform:capitalize;
+/*border-bottom:#FFDEBD 1px dotted;*/
+
+
+}
+/*eb added 7-19-12*/
+#nav-menu ul.menu ul a {
+    display:inline;
+ 
+text-transform: capitalize;
+}
+#nav-menu ul.menu ul a:hover {
+    display:block;
+    color:#111;
+
+}
+#nav-menu ul.menu li {
+  color:#FFA347;
+  padding-top: 3px;
+  float: left;
+  display: block;
+}
+/*--------------------- [ LEFT SIDE MENU ]  -------------*/
+
+ul.navTree a,
+#sidebar-menu a {
+text-transform: normal;
+color:#2D7ABF ;
+font-size: 1em;
+display: block;
+padding-left:10px;
+
+}
+ ul.navTree a:hover, 
+#sidebar-menu a:hover { 
+color:#4d4d4d ;
+border:none;
+}
+ ul.navTree,
+#sidebar-menu ul {
+margin: 0px;
+padding:0px;
+}
+ ul.navTree li.navTreeItem,
+#sidebar-menu li {
+width: auto;
+margin: 0px;
+padding:5px 0px;
+border:none;
+list-style:none;
+}
+ul.navTree {
+    margin:0;
+    padding:0;
+    margin-left:-30px;
+}
+
+#sidebar-menu ul ul {
+margin-left: 10px;
+}
+
+#sidebar-menu ul ul li {
+width: auto;
+margin: 0px;
+padding:5px 0px 0px 0px;
+}
+
+#sidebar-menu ul ul a {
+color : #4D687C;
+}
+
+
+/*==================[ FOOTER MENU ]=================================*/
+
+
+#footer ul {
+list-style : none;
+padding : 0px;
+margin : 0px;
+text-align:center;
+float : left;
+}
+
+#footer ul li {
+padding-left : 0px;
+padding-right : 0px;
+float : left;
+margin : 0px;
+border-left:1px dotted #eee;
+text-transform : none;
+}
+
+#footer a, #footer a:link, #footer a:visited, strong a:visited {
+color : #001F38;
+}
+
+#footer a:hover, #footer ul li a:hover {
+color : #6f461d;
+}
+
+#footer ul li a, #footer ul li a:visited, #footer ul li a:link  {
+display : block;
+padding: 0px 10px;
+text-decoration : none;
+width : auto;
+}
+
+
+/*==================[ A HERF LINKS ]=================================*/
+
+a {
+outline : none;
+}
+a:link, a:visited {
+color: #2D7ABF;
+}
+a:hover {
+color: #999999;	
+}
+
+a.readon, a.readon:link, a.readon:active, a.readon:visited {
+background-image: url("../imgs/readmorebtn.gif");
+background-position: left center;
+background-repeat: no-repeat;
+color: #2D7ABF;
+display: block;
+margin:10px 0px;
+margin-top:17px;
+padding-left: 16px;
+text-decoration: none;
+width: 150px;
+font-size:13px;
+clear:both;
+}

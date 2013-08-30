@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+   xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+   
+   <!-- The default theme, used for standard Plone web pages -->
+   
+
+       
+<!-- Logo (link target) -->
+<before
+    css:theme="a img"
+    css:content="#logo"
+    />
+
+<copy attributes="href title" css:theme='#logo a' css:content="#logo"/>
+ 
+
+  <rules css:if-content="#visual-portal-wrapper">
+
+ <theme href="index_bg_b.html" if-path="search_form"/>
+        <theme href="index_bg_b.html" if-path="about"/>
+        <theme href="index_bg_o.html" if-path="graduate"/>
+        <theme href="index_bg_b.html" if-path="undergraduate"/>
+        <theme href="index_bg_o.html" if-path="people"/>
+        <theme href="index_bg_b.html" if-path="events"/>
+        <theme href="index_bg_o.html" if-path="resources"/>
+       
+        <theme href="index_bg_b.html" if-path="folder_contents"/>
+         <theme href="index_bg_b.html" if-path="dashboard"/>
+            <theme href="index_bg_b.html" if-path="logged_out"/>
+              <theme href="index_bg_b.html" if-path="login_form"/>
+                    <theme href="index_bg_b.html" if-path="portal_registry"/>
+                 <theme href="index_bg_b.html" if="contains($path, 'prefs')"/>
+          <theme href="index_bg_b.html" if="contains($path, 'control')"/>
+           <theme href="index_bg_b.html" if="contains($path, 'events')"/>
+            <theme href="index_bg_b.html" if="contains($path, 'news')"/>
+            <theme href="index_bg_b.html" if="contains($path, '@@')"/>
+            <theme href="index_bg_b.html" if="contains($path, 'acl_users')"/>
+            <theme href="index_bg_b.html" if="contains($path, 'portal_factory')"/>
+            <theme href="index_bg_b.html" if="contains($path, 'atct_edit')"/>
+             <theme href="index_bg_b.html" if="contains($path, 'contextportlets')"/>
+              <theme href="index_bg_b.html" if="contains($path, 'sitemap')"/>
+            
+            <notheme if-path="@@maintenance-controlpanel" />
+            <notheme if-path="@@manage-viewlets" />
+<drop theme if="contains($path, '@@')"/>
+            
+            <!-- this rule only seems to work on body.template-->
+            
+             <theme href="index_bg_b.html" css:if-content="body.template-default_error_message"/>
+               <theme href="index_bg_b.html" css:if-content="body.template-search"/>
+           
+     
+<!--drop the navigation on full view for folder-->
+<!--<drop css:content="dl.portlet" css:if-content="body.template-folder_full_view" />-->
+
+        
+       
+          
+
+         
+
+        <theme href="index.html" />
+
+
+    
+    <!-- Rules applying to a standard Plone web page -->
+        
+        <!-- Add meta tags -->
+        <drop theme="/html/head/meta" />
+        <drop css:content="link[href$='public.css']" />
+        <drop css:content="link[href$='columns.css']" />
+       
+        <drop css:content="link[href$='discussion.css']" />
+        <!--><drop css:content="link[href$='ploneKss.css']" />-->
+        <drop css:content="link[href$='print.css']" />
+        <drop css:content="link[href$='mobile.css']" />
+        <drop css:content="link[href*='base-cachekey']" />
+        <drop css:content="link[href$='favicon.ico']" />
+        <after content="/html/head/meta" theme-children="/html/head" />
+        <after content="/html/head/base" theme-children="/html/head" />
+        <replace theme='/html/head/title' content='/html/head/title' />
+       
+        
+        <!--Head-->
+<!-- Logo (link target) -->
+<copy css:content="head base" css:theme="head base" />    
+    <before css:content="head style, head link, head meta" css:theme-children="head" />
+   
+      <!-- Copy style, script and link tags in the order they appear in the content -->
+        <before content="/html/head/style | /html/head/script | /html/head/link" theme-children="/html/head" />
+
+        <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <copy attributes="id dir class" css:content="body" css:theme="body" />
+
+        <!-- Skip Links -->
+        <before css:content="#portal-header > p.hiddenStructure" css:theme-children="#portal-header" />
+        
+                 
+          <!-- Portal-Personaltools -->
+        <replace css:content="#portal-personaltools-wrapper" css:theme="#portal-personaltools-wrapper"/>
+        
+        <!--Footer-->
+ <replace css:content="#portlets-footer" css:theme-children="#btm-wrapper"/>
+
+<!-- Portal-searchbox -->
+        <replace css:content='#portal-searchbox' css:theme='#portal-searchbox' />
+
+<!--Columns-->
+  <copy css:content="#portal-column-content" css:theme="#frontpg-area" />
+ 
+    <copy css:content="#portal-column-content" css:theme="#secondpg-content" />
+ 
+  <merge attributes="class" css:theme="table" css:content="table"/>
+
+     <!-- Site actions -->
+        <replace css:content="#portal-siteactions" css:theme="#portal-siteactions" />
+        
+     
+
+
+
+ <replace content='children:#parent-fieldname-text' 
+             theme='children:#body'  
+             if-content='#parent-fieldname-text'/>
+<copy attributes="class" css:content="body" css:theme="body"/>
+
+</rules>
+ 
+<after css:content="#visual-portal-wrapper .row:last-child script" css:theme="#wrapper" />
+
+</rules>

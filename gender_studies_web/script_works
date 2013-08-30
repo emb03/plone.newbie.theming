@@ -1,0 +1,10 @@
+<script type="text/javascript">
+$(document).ready(function() {
+$('.section-prospective-students > ul, .section-graduate-student-resources > ul, .section-alumni-resources > ul,').prev('a').click(function(e) {
+   e.preventDefault() // or return false;
+    $('.section-prospective-students, .section-faculty-resources, .section-graduate-student-resources, .section-alumni-resources, .section-faculty').addClass('disabled');
+ 
+});
+});
+
+</script>

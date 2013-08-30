@@ -1,0 +1,7 @@
+ <after theme-children="/html/head">
+
+    <style type="text/css">
+        <copy css:if-content="body.template-document_view .navTree .navTreeLevel1"/>
+        body > .section-prospective-students { pointer-events:none; }
+    </style>
+</after>    

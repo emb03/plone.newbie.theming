@@ -1,0 +1,23 @@
+div id="content-core">
+                                 
+    
+        
+        <div id="parent-fieldname-text" class="">
+            
+<div class="rslides_container">
+<ul id="slides1" class="rslides rslides1" style="max-width: 1100px;"><li id="rslides1_s0" style="display: list-item; float: left; position: relative;" class="rslides1_on"><a href="http://www.cnn.com"><img src="1.jpg" class="image-inline"></a>
+<p class="caption"><span class="sub">Title of Featured Story</span> <span class="text_sub">This is a blurb with a <a href="http://www.cnn.com">read more link.</a></span></p>
+</li>
+<li id="rslides1_s1" style="display: none;"> <a href="http://www.cnn.com"><img src="2.jpg" class="image-inline"></a>
+<p class="caption"><span class="sub">Title of Featured Story</span> <span class="text_sub">This is a blurb with a <a href="http://www.cnn.com">read more link.</a></span></p>
+</li>
+<li id="rslides1_s2" style="display: none;"> <a href="http://www.cnn.com"><img src="3.jpg" class="image-inline"></a>
+<p class="caption"><span class="sub">Title of Featured Story</span> <span class="text_sub">This is a blurb with a <a href="http://www.cnn.com">read more link.</a></span></p>
+</li>
+</ul><a class="rslides_nav rslides1_nav prev" href="#">Previous</a><a class="rslides_nav rslides1_nav next" href="#">Next</a><ul class="rslides_tabs rslides1_tabs"><li class="rslides_here"><a class="rslides1_s1" href="#">1</a></li><li><a class="rslides1_s2" href="#">2</a></li><li><a class="rslides1_s3" href="#">3</a></li></ul></div>
+            
+        </div>
+    
+    
+
+                             </div>

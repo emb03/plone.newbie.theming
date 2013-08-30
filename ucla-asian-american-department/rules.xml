@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+    <rules css:if-content="#visual-portal-wrapper">
+     <theme href="theme.html"/>
+     </rules>
+     
+      <!--Apply styling to navigation and inherit theme classes-->
+ <replace css:content-children="#portal-globalnav" css:theme-children="#menu"/>
+<copy attributes="*" css:theme="body" css:content="body" />
+<!-- prevent unwanted styling on edit bar-->
+<!--<before css:content="#edit-bar" css:theme="#all_content"/>-->
+<!--<replace method="raw" css:content="state-published" css:theme="icon-th-large"/>-->
+            <!--<replace css:content=".state-published">
+    <a class="icon-th-large">'*'</a>
+    </replace>-->
+
+<replace css:content-children="ul.submenu li"><xsl:attribute name="class">icon-th-large</xsl:attribute><xsl:apply-templates select="node()"/></replace>
+
+<!--<rules css:if-content=".submenu">
+        <after css:theme=".icon-th-large" css:content=".state-published"/>
+    </rules>-->
+
+<!--<replace css:content=".submenu" css:if-theme=".blue-box"/>-->
+  
+         <!--<merge attributes="ul" css:content="submenu" css:theme="blue-box" />-->
+         <!--<copy attributes="id dir class" css:content="body" css:theme="body" />-->
+          
+      
+        <!--<before css:content="ul.blue-box" css:theme="dropdown_3columns align_left" />-->
+    
+        <!--<drop css:content-children="div#portal-footer p"/>-->
+         <after
+            content="/html/head/link"
+            theme-children="/html/head"
+            />
+        <!--<before content='//*[@id="portal-personaltools"]' theme='//*[@id="header"]'/>-->
+ <replace css:content="#portlets-footer" css:theme-children="#footer" />
+        /> 
+           <replace css:content="#portal-personaltools" css:theme="#portal-personaltools" />
+        <replace css:theme-children='#portal-personaltools' css:content-children='#portal-personaltools-wrapper' />
+        <!--two ways to get plone edit stuff-->
+<!--<before css:content="#edit-bar" css:theme="#all_content"/>-->
+<replace css:theme-children="#all_content" css:content="#portal-columns"/>
+
+
+<!--Head-->
+<!-- Logo (link target) -->
+<copy attributes="href title" css:content='#portal-logo' css:theme="div.logo a"/>
+ <!-- Add meta tags and title from theme -->
+        
+        <!-- Copy style, script and link tags in the order they appear in the content -->
+       
+    
+
+<!--Portlets-->
+ <!-- Bring the portlet columns inside the sidebar-->
+    <!--<drop css:content="#portal-column-two" />-->
+ <copy css:content="#portal-column-content" css:theme="#main_content" />
+   
+
+  <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <copy attributes="id dir class" css:content="body" css:theme="body" />
+         <merge attributes="class" css:theme=".dir" css:content=".state-published" />
+   
+<before
+    css:content="div.manageInHeaderPortletsLink a.managePortletsFallback"
+    css:theme-children="div#footer"
+    />
+<!--<merge attributes="class" css:theme=".dir" css:content=".state-published" />-->
+<!--<merge attributes="class" css:theme=".icon-th-large" css:content="li" />-->
+
+
+ <replace content='children:#parent-fieldname-text' 
+             theme='children:#body'  
+             if-content='#parent-fieldname-text'/>
+<copy attributes="class" css:content="body" css:theme="body"/>
+
+<!--Viewlets-->
+<copy attributes="href title" css:content="#portal-logo" css:theme="#logo a"/>
+   <replace
+    css:theme="div#portal-searchbox"
+    css:content="div#portal-searchbox"
+    />
+  
+   <drop
+    css:content="div.searchSection"
+    />
+     
+         <drop css:content="link[href$='public.css']" />
+        <drop css:content="link[href$='columns.css']" />
+        <!--<drop css:content="link[href$='portlets.css']" />-->
+        <drop css:content="link[href$='discussion.css']" />
+        <!--<drop css:content="link[href$='ploneKss.css']" />-->
+        <!--<drop css:content="link[href$='base.css']" />-->
+        <drop css:content="link[href$='mobile.css']" />
+        <!--<drop css:content="link[href$='authoring.css']" />-->
+        <!--<drop css:content="link[href$='controlpanel.css']" />-->
+        <drop css:content="link[href$='deprecated.css']" />
+        <!--<drop css:content="link[href$='navtree.css']" />-->
+        <!--<drop css:content="link[href$='invisibles.css']" />-->
+        <!--<drop css:content="link[href$='forms.css']" />-->
+        <drop css:content="link[href$='print.css']" /> 
+        <drop css:content="link[href*='base-cachekey']" />
+        <drop css:content="link[href$='favicon.ico']" />
+
+<!-- Control Panel -->
+<after css:content="head script" css:theme="#wrapper" />
+<after css:content="#visual-portal-wrapper .row:last-child script" css:theme="#wrapper" />
+
+</rules>

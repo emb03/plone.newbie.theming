@@ -1,0 +1,209 @@
+/*---------- PORTAL SEARCHBOX ----------*/
+
+.searchSection {
+     /*margin:-10px 11px 0;*/
+   display:block;
+    background-color:#fff;
+ -moz-opacity: 0.70;
+opacity: 0.70;
+filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
+filter:alpha(opacity=70);
+
+}
+div.overlaybg div.close, div.overlay div.close {
+    background-image: url("img/pb_close.png");
+    cursor: pointer;
+    height: 30px;
+    left: -14px;
+    position: absolute;
+    top: -14px;
+    width: 30px;
+}
+
+#portal-advanced-search.hiddenStructure {
+    display:none;
+}
+
+label.hiddenStructure {
+    display:none;
+}
+#portal-searchbox {
+  position:absolute;
+  right:16px;
+  top:-16px;
+  z-index:1;
+  }
+.LSBox {
+  position:relative;
+  display:block;
+  background-color:transparent;
+  height:16px;
+  padding:15px;
+  padding-bottom:18px;
+  padding-right:0;
+  width:239px;
+  /*margin-top:-34px;*/
+ 
+/*-webkit-border-bottom-right-radius: 10px;
+-webkit-border-bottom-left-radius: 10px;
+-moz-border-radius-bottomright: 10px;
+-moz-border-radius-bottomleft: 10px;
+border-bottom-right-radius: 10px;
+border-bottom-left-radius: 10px;*/
+  }
+.searchField {
+  background:url(../img/searchbox.png) no-repeat 0 0;
+text-indent:21px;
+  border:0;
+  font-size:1em;
+  height:31px;
+  padding:0 6px 0 10px;
+  vertical-align:top;
+  width:242px;
+  }
+input.inputLabelActive {
+  color:#76797c;
+  }
+ 
+#portal-searchbox .searchButton {
+  text-indent:-9999px;
+background-image:url(../img/blank_searchbox.gif);
+background-repeat:no-repeat; /*important*/
+border:0px; /*important*/
+background-color:transparent; /*important*/
+position:absolute; /*important*/
+top:4px;
+right:9px;
+width:30px;
+height:27px;
+  }
+.searchSection {
+  color:#fff;
+  display:none;
+  font-size:0.92em;
+
+  }
+#portal-searchbox:hover .searchSection {
+  display:block;
+  }
+.searchSection input {
+  height:14px;
+  margin-right:4px;
+  vertical-align:middle;
+  width:14px;
+  }
+.searchSection label {
+  vertical-align:middle;
+  }
+.searchSection label:hover {
+  color:#fff;
+  }
+
+/*---------- LIVESEARCH ----------*/
+.LSResult {
+  position:absolute;
+  right:0;
+  top:34px;
+  z-index:1;
+  }
+.LSTable {
+  margin: 0.5em 0;
+  }
+.LSRow {
+  border:0;
+  width:auto;
+  }
+.LSRow a {
+  font-weight:bold;
+  text-decoration:none;
+  white-space:normal;
+  }
+.livesearchContainer {
+  border:0;
+  color:#76797c;
+  left:0;
+  margin:0;
+  padding:0;
+  width:385px;
+  }
+#portal-column-two .livesearchContainer {
+  width:210px;
+  }
+#livesearchLegend {
+  border:1px solid #d3d3d4;
+  border-bottom:0;
+  background-color:#fff;
+  padding: 0.25em;
+  position:relative;
+  }
+.LSIEFix {
+  background-color:#fff;
+  border:1px solid #d3d3d4;
+  margin-top:-1px;
+  padding:0.5em;
+  }
+.LSDescr {
+  color:#76797c;
+  font-size:85%;
+  font-weight:normal;
+  margin-left:2.5em;
+  
+}
+
+/*---------- PORTAL PERSONAL TOOLS ----------*/    
+#portal-personaltools {
+  background-color:none;
+  left:2px;
+  padding:3px;
+  padding-top:18px;
+  position:absolute;
+  top:5px;
+  }
+#portal-personaltools #anon-personalbar a {
+  display:inline;
+  font-weight:bold;
+  }
+#portal-personaltools dt a {
+  color:#73A20F;
+  padding:0 0.25em;
+  padding-left:2.25em;
+  }
+#portal-personaltools dt a:hover {
+  color:#000;
+  }
+#portal-personaltools dd {
+  background-color:#e8ecf0;
+  left:0;
+  padding:0 0 5px;
+  right:auto;
+  top:100%;
+  }
+#portal-personaltools.activated .actionMenuContent {
+  display:block;
+  }
+#portal-personaltools li a {
+  color:#73A20F;
+  padding:2px 7px;
+  }
+#portal-personaltools li a:hover {
+  background-color:transparent;
+  color:#000;
+  text-decoration:underline;
+  }
+
+
+  
+  /*********ACTION MENU***********/
+#frontpg-area .documentEditable {
+margin-right:100px;
+position:relative;
+}
+
+#frontpg-area .contentActions {
+    margin-right:100px;
+position:relative;
+}
+#frontpg-area ul#contentActionMenus {
+    margin-right:100px;
+position:relative;
+}

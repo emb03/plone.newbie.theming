@@ -1,0 +1,170 @@
+
+.clear:after,
+#header:after,
+#navigation:after,
+#footer:after,
+ {
+    content: ".";
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+    }
+
+/*******perfect center background CSS3*******/
+
+/* ==================================================================================================================== */
+/* ! The 1140px Grid V2 by Andy Taylor \ http://cssgrid.net \ http://www.twitter.com/andytlr \ http://www.andytlr.com   */
+/* ==================================================================================================================== */
+body {
+	margin:0;
+	padding:0;
+}
+
+.container {
+	margin:3%;
+
+}
+
+#wrapper {
+   
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+
+    max-width: 1140px;
+    min-width: 755px;
+    /*overflow-x: hidden;*/
+    /*overflow-y: hidden;*/
+    height: auto !important;
+    overflow:hidden;
+	padding-bottom: 400px;
+ 
+   
+}
+
+.rowe {
+
+}
+
+.onecol, .threecol, .fourcol, .fivecol, .sixcol, .sevencol, .eightcol, .ninecol, .tencol, .elevencol, .news {
+margin-right: 3.8%;
+float: left;
+min-height: 1px;
+}
+.twocol {
+margin-right: 1.8%;
+float: left;
+min-height: 1px;
+ }
+.rowe .onecol {
+width: 4.85%;
+}
+
+.rowe .twocol {
+width: 14.45%;
+}
+.news {
+	clear: none;
+    float: right;
+   margin-right: 0px;
+    width: 22.05%;
+}
+.rowe .threecol {
+width: 22.05%;
+}
+
+
+.rowe .fourcol {
+width: 30.75%;
+}
+
+.rowe .fivecol {
+width: 39.45%;
+}
+
+.rowe .sixcol {
+width: 46.9%;
+
+}
+
+.rowe .sevencol {
+width: 56.75%;
+}
+
+.rowe .eightcol {
+width: 65.4%;
+}
+
+.rowe .ninecol {
+width: 74.05%;
+}
+
+.rowe .tencol {
+width: 82.7%;
+}
+
+.rowe .elevencol {
+width: 91.35%;
+}
+
+.rowe .twelvecol {
+width: 100%;
+float: left;
+}
+
+.last {
+margin-right: 0px;
+}
+
+img, object, embed {
+max-width: 100%;
+}
+
+img {
+	height: auto;
+}
+
+
+/* Smaller screens */
+
+@media only screen and (max-width: 1023px) {
+
+	body {
+	font-size: 0.8em;
+	line-height: 1.5em;
+	}
+	#footer {
+	}
+	}
+
+
+/* Mobile */
+
+@media handheld, only screen and (max-width: 767px) {
+
+	body {
+	font-size: 16px;
+	-webkit-text-size-adjust: none;
+	}
+	
+	.rowe, body .container, #wrapper {
+		width:100%;
+	/*width: 95% !important;*/
+	min-width: 0;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	}
+	
+	.rowe .onecol, .rowe .twocol, .rowe .threecol, .rowe .fourcol, .rowe .fivecol, .rowe .sixcol, .rowe .sevencol, .rowe .eightcol, .rowe .ninecol, .rowe .tencol, .rowe .elevencol, .rowe .twelvecol, .news {
+	width: auto;
+	float: none;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	}
+
+}

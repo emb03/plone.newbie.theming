@@ -1,0 +1,56 @@
+<tal:sections tal:define="portal_tabs view/portal_tabs"
+     tal:condition="portal_tabs"
+     i18n:domain="plone">
+
+ 
+
+    <h5 class="hiddenStructure" i18n:translate="heading_sections">Sections</h5>
+
+    <ul id="portal-globalnav" nav ="navigation" 
+  
+        tal:define="selected_tab python:view.selected_portal_tab" 
+title="" href="#menu"><div id="access"><a class="skip-link icon-reorder"><i class="icon-th-large"></i>&#8194;Menu
+        <tal:tabs tal:repeat="tab portal_tabs"
+        >
+ 
+
+ <li class="menu_left" 
+tal:define="tid tab/id;
+
+                         subitems python:view.getTabObject(tabUrl = tab['url'], tabPath = tab.get('path'));
+                         item_clickable python:view.enable_parent_clickable or not subitems"
+             tal:attributes="id string:portaltab-${tid};
+                             class python:selected_tab==tid and 'selected' or 'plain' and 'drop'"
+           ><a href=""
+               tal:content="tab/name"
+               tal:attributes="href tab/url;
+                               title tab/description|nothing;
+                               class python:item_clickable and 'plain' or 'noClick'" >
+
+            Tab Name
+            </a>
+
+<tal:block tal:condition="subitems" >
+
+ <div class="dropdown_3columns align_left">
+
+  <div class="col_2a">
+    
+
+                <ul class="submenu">
+                    <tal:subitems tal:replace="structure subitems">
+
+<tal:comment replace="nothing">Six Feet Up Code</tal:comment>
+                        <tal:comment replace="nothing">Submenu</tal:comment>
+
+ 
+
+</tal:subitems>
+<tal:comment replace="nothing">Six Feet Up Code end</tal:comment>
+
+
+
+                </ul>
+            </tal:block></li>
+</tal:tabs></ul>
+</tal:sections>

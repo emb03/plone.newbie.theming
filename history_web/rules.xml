@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules
+   xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  
+  
+    <rules css:if-content="#visual-portal-wrapper">
+     <theme href="theme.html"/>
+     </rules>
+      <!--Apply styling to navigation and inherit theme classes-->
+   <replace
+        css:content-children="ul#portal-globalnav"
+        css:theme-children="ul#nav"
+        />
+      
+
+
+        <merge attributes="class" css:theme=".dir" css:content=".state-published" />
+   
+        <!--<drop css:content-children="div#portal-footer p"/>-->
+         <after
+            content="/html/head/link"
+            theme-children="/html/head"
+            />
+        <before content='//*[@id="portal-personaltools"]' theme='//*[@id="header"]'/>
+ <copy css:content="div#portlets-footer" css:theme="div#footer" />
+        /> 
+        
+<!--Head-->
+<!-- Logo (link target) -->
+<copy attributes="href title" css:content='#portal-logo' css:theme="div.logo a"/>
+ <!-- Add meta tags and title from theme -->
+        
+        <!-- Copy style, script and link tags in the order they appear in the content -->
+       
+    
+
+<!--Portlets-->
+ <!-- Bring the portlet columns inside the sidebar THIS DOESN'T SEEM TO WORK-->
+    <copy css:content="#portal-column-two" css:theme="#sidebar" />
+  <copy css:content="#portal-column-content" css:theme=".main_content" />
+   
+
+
+
+  <!-- Copy over the id/class attributes on the body tag.
+             This is important for per-section styling -->
+        <copy attributes="id dir class" css:content="body" css:theme="body" />
+   
+<before
+    css:content="div.manageInHeaderPortletsLink a.managePortletsFallback"
+    css:theme-children="div.tencol"
+    />
+
+
+
+ <replace content='children:#parent-fieldname-text' 
+             theme='children:#body'  
+             if-content='#parent-fieldname-text'/>
+<copy attributes="class" css:content="body" css:theme="body"/>
+
+<!--Viewlets-->
+<copy attributes="href title" css:content="#portal-logo" css:theme="#logo a"/>
+
+<replace css:content="#portal-searchbox" css:theme=".search"/> 
+<drop
+    css:content="div.searchSection"
+    />
+
+<!-- Control Panel -->
+<after css:content="head script" css:theme="#wrapper" />
+<after css:content="#visual-portal-wrapper .row:last-child script" css:theme="#wrapper" />
+
+</rules>
+
+
+
+  

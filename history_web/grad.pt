@@ -1,0 +1,144 @@
+url:http://www.history.ucla.edu/people/grad_view
+meta_type:Page Template
+title:
+content_type:text/html
+cookie:__utma=125574670.981505549.1220547316.1331138809.1331226361.367; __unam=7a4c36d-12b4092a43a-2500035c-37; __utmz=125574670.1331226361.367.73.utmcsr=computing.sscnet.ucla.edu|utmccn=(referral)|utmcmd=referral|utmcct=/labs; is_returning=1; __utmz=246481949.1331236565.184.10.utmcsr=new.history.ucla.edu|utmccn=(referral)|utmcmd=referral|utmcct=/people/faculty/contact; __utma=246481949.301373642.1322005077.1331241845.1331243798.186; dtpref_cols="100%"; SSC_SESSION=ad2304eaad276ea0a2596f5ab6b21c77; _ZopeId="63369319A5QI.6YKBKo"; s_cc=true; ev4=Marina%20Dundjerski%20%9294; s_sq=%5B%5BB%5D%5D; tree-s="eJzTyCkw5NLIKTDiClZ3hAAnP-98W3WuAmOuRKCECUjWFEW2HCRrBpY1B8laIMtmu4JkLbkSwUAPAJvlGL8"; __utmc=125574670; _ucla_sso=2012-03-08T12%3A25%3A43-08%3A00; __ac="bWFyeTohZ2FsYTk2aWRl"; __utmc=246481949; __utmb=246481949.23.10.1331243798
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+    <!-- If a specific person is called, display that person's details -->
+    <tal:block tal:condition="python:'lid' in request.form">
+    <tal:block tal:define="results python:context.getgradinfo(request.form['lid'])">
+
+      <!-- If a user has gotohome set, jump directly to their homepage -->
+      <span tal:condition="python:results['gotohome'] == 'Yes'
+                              and results['homepage'].find('?lid') == -1"
+            tal:content="python:container.REQUEST.RESPONSE.redirect(results['homepage'])">jump</span>
+
+      <h1 tal:content="results/fullname">name</h1>
+      <h3 tal:condition="results/degree" tal:content="structure results/degree">degree</h3>
+
+      <!-- Use right-aligned image if present -->
+      <img tal:condition="results/photo"
+           tal:attributes="class string:image-right profdb; src results/photo" />
+
+      <!-- Homepage -->
+
+      <p tal:condition="python:results['homepage'] and results['homepage'].find('?lid') == -1">
+        <a tal:attributes="href results/homepage">Homepage</a>
+      </p>
+
+      <!-- Contact info -->
+      <p>
+        <span tal:condition="results/office"
+              tal:replace="structure string:Office: ${results/office}<br />">office</span>
+        <span tal:condition="results/phone"
+              tal:replace="structure string:Phone: ${results/phone}<br />">phone</span>
+        Fax: 310-206-7833<br />
+        <span tal:condition="results/email">E-mail:
+          <a tal:content="python:results['email'].lower()"
+             tal:attributes="href python:'mailto:' + results['email'].lower()">email</a><br />
+        </span>
+      </p>
+
+      <!-- Link to Curriculum Vitae -->
+      <p tal:condition="results/vita">
+        <a tal:attributes="href results/vita">Curriculum Vitae</a>
+      </p>
+
+      <!-- Other additional fields -->
+      <span tal:condition="results/subfields">
+        <h3>Field</h3>
+        <p tal:content="structure results/subfields">subfields</p>
+      </span>
+      <span tal:condition="results/research">
+        <h3>Research Interests</h3>
+        <p tal:content="structure results/research">research</p>
+      </span>
+      <span tal:condition="results/notes">
+        <h3>Notes</h3>
+        <p tal:content="structure results/notes">notes</p>
+      </span>
+      <span tal:condition="results/publications">
+        <h3>Publications</h3>
+        <p tal:content="structure results/publications">publications</p>
+      </span>
+      <span tal:condition="results/grants_awards">
+        <h3>Grants and Awards</h3>
+        <p tal:content="structure results/grants_awards">grants_awards</p>
+      </span>
+      <span tal:condition="results/advisors">
+        <h3>Advisors</h3>
+        <p tal:content="structure results/advisors">advisors</p>
+      </span>
+      <span tal:condition="results/conf_presentations">
+        <h3>Conference Presentations</h3>
+        <p tal:content="structure results/conf_presentations">conf_presentations</p>
+      </span>
+
+      <!-- Link to edit student, sends the user off-site -->
+      <hr />
+      <a tal:attributes="href string:http://www.history.ucla.edu/graduate/gradsplain.php?lid=${request/form/lid}&edit=1">
+        Edit This Page</a>
+
+    </tal:block>
+    </tal:block>
+
+    <!-- If no person is specified, show the whole list -->
+    <tal:block tal:condition="python:'lid' not in request.form"
+               tal:define="results python:context.getgradlist()">
+
+      <!-- First param: header to display -->
+<div class="rowe">
+<div class="ninecol">
+      <h1>Grad Students</h1>
+
+        <ul class="profdb">
+
+        <!-- Repeat results of query -->
+        <li tal:repeat="row results">
+
+          <!-- Format name, stripping whitespace, uppercasing words, and converting charset -->
+          <a tal:content="python:('%s, %s %s' % (row.lastname, row.firstname, row.middlename)
+                                     ).decode('windows-1252').upper().strip()"
+             tal:attributes="href string:${context/id}?lid=${row/lid}">name</a> -
+
+          <!-- Include lowercased email if present -->
+          <a tal:condition="row/email" tal:content="python:row.email.lower()"
+             tal:attributes="href python:'mailto:' + row.email.lower()">email</a>
+
+          <!-- Include degree, subfields, and research if present -->
+          <span tal:condition="row/degree" tal:content="structure string:(${row/degree})">degree</span>
+          <span style="font-style: italic;" tal:condition="row/subfields"
+                tal:content="structure python:'Subfield: ' + row.subfields.decode('windows-1252')">
+            subfields</span>
+          <span tal:condition="python:row.subfields and row.research"> - </span>
+          <span tal:condition="row/research"
+                tal:content="structure python:row.research.decode('windows-1252')">research</span>
+        </li>
+      </ul>
+
+      <!-- Grad count and link for users to add themselves -->
+      <hr />
+      <p style="font-style: italic; text-align: center;">This list reflects
+        <span tal:replace="python: len(results)">totalshown</span> out of
+        <span tal:replace="python: context.getgradcount()">totalgrads</span>
+        grad students in this department.<br />
+        Grad Students, to add or remove your name, click
+        <a href="http://www.history.ucla.edu/graduate/grads.php?edit=1">here</a>.<br />
+        To logout, click <a href="http://www.history.ucla.edu/graduate/grads_logout.php">here</a>.
+      </p>
+    </tal:block>
+
+  </tal:main-macro>
+
+</metal:main>
+
+</body>
+</html>

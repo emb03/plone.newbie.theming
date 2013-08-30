@@ -1,0 +1,386 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="description" content="UCLA History Department" />
+<meta name="keywords" content="UCLA, History, Department, History Department, Department of History" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Welcome to UCLA's History Department </title>
+  <!--[if lte IE 7]>    
+        <link rel="stylesheet" type="text/css" media="all" href="css/ie7.css" />
+      <![endif]-->
+ <!--[if IE 8]>    
+        <link rel="stylesheet" type="text/css" media="all" href="css/ie8.css" />
+      <![endif]-->
+          <!-- 1140px Grid styles for IE -->
+    <!--[if IE 9]>
+    <link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" />
+    <![endif]-->
+
+<!-- Beginning of menu dropdown -->
+<link href="css/dropdown.css"media="screen" rel="stylesheet" type="text/css" />
+<link type="text/css" href="css/default.advanced.css"  media="screen" rel="stylesheet"  />
+
+
+<!-- / END -->
+
+<link href='http://fonts.googleapis.com/css?family=Arapey:400,400italic' rel='stylesheet' type='text/css'/>
+
+	
+	
+	<!-- 1140px Grid styles for IE -->
+	<!--[if lte IE 9]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen" /><![endif]-->
+
+	<!-- The 1140px Grid - http://cssgrid.net/ -->
+	<link rel="stylesheet" href="css/1140.css" type="text/css" media="screen" />
+	
+	<!-- History custom styles -->
+	<link type"text/css" rel="stylesheet" href="css/styles.css" media="screen" />
+	
+	<!--css3-mediaqueries-js - http://code.google.com/p/css3-mediaqueries-js/ - Enables media queries in some unsupported browsers-->
+	<!--<script type="text/javascript" src="js/css3-mediaqueries.js"></script>-->
+   
+	
+	<!--Delete embedded styles, just for example.-->
+	
+<!-- FlexSlider pieces -->
+<link rel="stylesheet" href="demo/flexslider.css" type="text/css" media="screen" />
+		
+	
+	<!-- Includes for this demo -->
+	<link rel="stylesheet" href="demo/demo.css" type="text/css" media="screen" />
+    <!-- Begin JavaScript -->
+         <script type="text/javascript" src="js/respond.src.js"></script>
+	    <script type="text/javascript" src="javascripts/css_browser_selector.js"></script>
+		 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+	<script type="text/javascript" src="demo/modernizr.js"></script>
+
+	<script type="text/javascript" src="demo/jquery.flexslider.js"></script>
+  <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+	<!-- Hook up the FlexSlider -->
+<script type="text/javascript">
+
+$(document).ready(function() {
+            $('.flexslider').flexslider({
+            slideshow: true, 
+             animation: 'slide',
+             pauseOnHover: true, 
+             slideDirection: "horizontal",
+        	 controlsContainer: '.flex-container'
+			});
+			
+	
+	});
+     //mobile
+      jQuery.noConflict();
+
+   jQuery(document).ready(function(){
+	   
+    
+    var options = '<option selected>Go to...</option>';
+    jQuery('#nav').find('a').each(function () {
+    var value = jQuery(this).attr('href'),
+    text = jQuery(this).text(),
+          depth = jQuery(this).parent().parents('ul').length,
+        depthChar ='',
+        i = 1;
+        for (i; i < depth; i++) { depthChar += '&ndash;&nbsp'; }
+        options += '<option value = '+value;
+if (value == undefined)
+{
+options += ' disabled = "disabled"';
+}
+options += ' >' + depthChar + text + '</option>;' 
+
+        
+    });
+     jQuery('<select />').append(options).appendTo('#nav');
+    
+   
+    
+    jQuery("#nav select").change(function () {
+        window.location = jQuery(this).find("option:selected").val();
+    });
+	  });
+  		
+  		
+       
+  		
+    </script>
+
+
+
+	<!-- End JavaScript -->
+</head>
+<body>
+<div id="wrapper">
+
+    <div class="twelvecol">
+<div id="header">
+<div class ="logo"><a href="#"><img src="images/logo-history.png" alt="UCLA Department of History" title="UCLA Department of History"/></a>
+   <!-- User -->
+    <div id="login">
+		<ul>
+			<li><a href="#" title="Login">Login</a></li>
+		</ul>
+	</div></div>
+    <div class="container">
+    <div class="rowe">
+    	<div class="twelvecol">
+<div class="social1"><a href="http://twitter.com/#!/uclahist"><img src="images/twitter.png" alt="Twitter" title="Twitter"/></a></div>
+<div class="social2"><a href="http://www.facebook.com/pages/UCLA-History-Department/137725762949955"><img src="images/facebook.png" alt="Facebook" title="Facebook"/></a></div>
+<div class="social3"><a href="http://www.youtube.com/user/UCLA"><img src="images/youtube.png" alt="You Tube" title="You Tube"/></a></div>
+
+    
+</div></div>
+   
+</div>
+ <div class="search">Search</div>
+
+<ul id="nav" class="dropdown dropdown-horizontal">
+<li> <a href="./" >Home</a></li>
+<li> <a href="./" >Note from the Chair</a></li>
+<li> <a href="./" >Academics</a>
+<ul>
+<li> <a href="./" class="dir">Undergraduate</a>
+<ul>
+<li><a href="./">Commencement Information</a></li>
+<li><a href="./">The Program</a></li>
+<li><a href="./">Advising</a></li>
+<li><a href="./">Honors and Awards</a></li>
+<li><a href="./">AP and Research</a></li>
+<li><a href="./">Study Abroad</a></li>
+<li><a href="./">History Summer Course Information</a></li>
+<li><a href="./">Minor in the History of Science and Medicine</a></li>
+<li><a href="./">Undergraduate Organizations</a></li>
+<li><a href="./">Listserv</a></li>
+<li><a href="./">Frequently Asked Questions</a></li>
+</ul>
+</li>
+<li><a href="./" class="dir">Graduate</a>
+<ul>
+<li><a href="./">Admission Information</a></li>
+<li><a href="./">Advising</a></li>
+<li><a href="./">Financial Information</a></li>
+<li><a href="./">Recent Graduates</a></li>
+<li><a href="./">Job Placements</a></li>
+<li><a href="./">Graduate Student Intranet</a></li>
+</ul>
+</li>
+<li><a href="./" class="dir">Fields of Study</a>
+<ul>
+<li><a href="./" class="dir">Africa</a>
+<ul>
+<li><a href="./">Recommended Program of Study</a></li>
+<li><a href="./">UCLA Dissertations in African History</a></li>
+<li><a href="./">Students Currently Enrolled</a></li>
+<li><a href="./">Book Covers</a></li>
+</ul>
+</li>
+<li><a href="./">Japan</a></li>
+<li><a href="./">Jewish</a></li>
+<li><a href="./">Latin America</a></li>
+<li><a href="./">Medieval</a></li>
+<li><a href="./">Middle East</a></li>
+<li><a href="./" class="dir">Modern Europe</a>
+<ul>
+<li><a href="./">Reading List</a></li>
+</ul>
+</li>
+<li><a href="./" class="dir">Science</a>
+<ul>
+<li><a href="./">Calendar of Events</a></li>
+<li><a href="./">Visiting Scholars, Current Students and Alumni</a></li>
+<li><a href="./">Course Syllabi</a></li>
+<li><a href="./">Reading List</a></li>
+</ul>
+</li>
+<li><a href="./">South and Southeast Asia</a></li>
+<li><a href="./" class="dir">United States</a>
+<ul>
+<li><a href="./">US Colloquium</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="./">Courses</a></li>
+<li><a href="./">UCLA General Catalog</a></li>
+</ul>
+</li>
+<li><a href="./">People</a>
+<ul>
+<li><a href="./">Faculty</a></li>
+<li class="c1">
+<ul>
+<li><a href="./">Faculty by Field</a></li>
+<li><a href="./">Faculty Office Hours</a></li>
+</ul>
+</li>
+<li><a href="./">Adjuncts and Lecturers</a></li>
+<li><a href="./">Emeriti</a></li>
+<li><a href="./">Visitors</a></li>
+<li><a href="./">Graduate Students</a></li>
+<li><a href="./" class="dir">Student Organizations</a>
+<ul>
+<li><a href="./">History Graduate Student Association</a></li>
+</ul>
+</li>
+<li><a href="./">Staff</a></li>
+<li><a href="./">UCLA History Board of Advisors</a></li>
+<li><a href="./">Alumni</a></li>
+<li><a href="./">In Memoriam</a></li>
+</ul>
+</li>
+<li><a href="./">News and Events</a>
+<ul>
+<li><a href="./">HDTV</a></li>
+<li><a href="./" class="dir">History Matters</a>
+<ul>
+<li><a href="./">Opinions</a></li>
+</ul>
+</li>
+<li><a href="./" class="dir">Colloquia and Conferences</a>
+<ul>
+<li><a href="./">History of Science</a></li>
+<li><a href="./">US Colloquium</a></li>
+<li><a href="./">Why History Matters</a></li>
+<li><a href="./">World History Colloquium</a></li>
+</ul>
+</li>
+<li><a href="./">Awards</a></li>
+<li><a href="./">Open Faculty Positions</a></li>
+</ul>
+</li>
+<li> <a href="./" >Affiliates</a></li>
+<li> <a href="./" >Giving</a></li>
+</ul>
+
+
+<!-- / END --></div>
+
+<!--content-->
+<div id="all_content">
+ 
+   
+<!--begin main content-->
+<div class="main_content">
+
+
+    
+<div class="container">
+	<div class="rowe">
+	<div class="tencol">
+   
+	<div class="flex-container">
+			<div class="flexslider">
+		    <ul class="slides">
+		    	<li>
+
+		    				    		<iframe width="563" height="295" src="http://www.youtube.com/embed/AzYC3eYjqG8" frameborder="0" id="teo" name="teo" ></iframe>
+
+		    	   <p class="flex-caption">
+                    <span class="span-caption-title">Teo Ruiz travels to the Whitehouse.</span> <br /><br />
+                    <span class="span-slider-text">On Feburary 12th, Professor Ruiz was acknowledged by President Obama with a medal for...</span><br /><br />
+                    <span class="span-slider-learn-more"><a href="http://www.cnn.com">LEARN MORE...</a></span></p>
+		    	</li>
+		    	<li>
+               		<a href="#"><img src="http://placehold.it/563x300"alt="some photo" /></a>
+		    		<p class="flex-caption">This image is wrapped in a link!</p>
+		    	</li>
+		    	<li>
+		    		<a href="#"><img src="http://placehold.it/563x300"alt="some photo" /></a>
+                    <p class="flex-caption">This image is wrapped in a link!</p>
+
+		    	</li>
+		    	<li>
+		    		<a href="#"><img src="http://placehold.it/563x300"alt="some photo" /></a>
+                    <p class="flex-caption">This image is wrapped in a link!</p>
+		    	</li>
+		    </ul>
+		  </div>
+	 	</div>
+		
+		
+
+	
+	
+       </div>
+ </div>
+		<!--end flex slider-->
+	
+ </div>
+        
+		
+<div class="container">
+    <div class="rowe">
+		<div class="fourcol">
+        <div class="news">
+         <h1><span class="lower">In the </span>News</h1>
+         <h3><a href="#">Kevin Terraciano</a></h3>
+         <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+   <h3><a href="#">Scot Brown</a></h3>
+           <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+         
+           <h3><a href="#">Sanjay Subrahmanyam</a></h3>
+             <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+
+       <p><a href="#"><span class="more_news">More News. . .</span></a></p>
+           
+    </div>
+    </div>
+  
+		<div class="sixcol">
+        <div class="events">
+          <h2>Events Calendar</h2>
+          <p><span class ="fourcol_text_b">DECEMBER 03, 2011</span></p>
+         <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </span>
+           <p><span class ="fourcol_text_b">DECEMBER 06, 2011</span></p>
+           <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+            <p><span class ="fourcol_text_b">DECEMBER 09, 2011</span></p>
+           <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+           <br />
+            <p><a href="#"><span class="more_news">More Events. . .</span></a></p> </div>
+		</div>
+    </div>
+  </div>
+	<div class="container">
+	<div class="rowe">
+   
+		<div class="threecol">
+		  <h3>Books<span class="lower"><br />by Faculty </span></h3>
+              <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                   <br />
+     <p><a href="#"><span class="more_news">Learn More . . .</span></a></p>
+		</div>
+        		<div class="threecol">
+			  <h3>Faculty<span class="lower"><br />honors</span></h3>
+               <span class="fourcol_text"> Lorem ipsum dolor sit amet, consectetur adipiscing elit.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+                   <br />
+   <p><a href="#"><span class="more_news">Learn More . . .</span></a></p>
+		</div>
+
+      </div>
+  </div>
+		
+<!--end main content--></div>
+  <!--sidebar -->
+<div id="sidebar">
+ <div class="last">
+ Sidebar
+
+</div></div>  <!--end sidebar-->
+<!--end all content--></div>
+
+</div>
+<div id="footer">
+  <div class="container">
+    <div class="rowe">
+        <div class="twelvecol">
+        </div></div></div>
+    </div><!--end wrapper-->
+    </div>
+
+</body>
+
+</html>

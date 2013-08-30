@@ -1,0 +1,66 @@
+.onecol {
+width: 4.7%;
+}
+
+.twocol {
+width: 13.2%;
+}
+
+.threecol {
+width: 22.05%;
+}
+
+.fourcol {
+width: 30.6%;
+}
+
+.fivecol {
+width: 39%;
+}
+
+.sixcol {
+width: 48%;
+}
+
+.sevencol {
+width: 56.75%;
+}
+
+.eightcol {
+width: 61.6%;
+}
+
+.ninecol {
+width: 74.05%;
+}
+
+.tencol {
+width: 82%;
+}
+
+.elevencol {
+width: 91.35%;
+}
+.other-links li a {
+    padding-left: 63px !important;
+    }
+.threecol-wide {
+    min-height: 430px !important;
+    }
+    
+    div.threecol-wide p.welcome-body {
+line-height:16px !important;
+    }
+.flex-caption {
+ width:31%;
+}
+.flex-container {
+margin-left: -2%;
+}
+.flex-direction-nav li .next {
+right:8px;
+}
+#sidebar {
+ margin-left: 3%; 
+}
+    

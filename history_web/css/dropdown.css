@@ -1,0 +1,73 @@
+@charset "UTF-8";
+
+/**
+ * Horizontal CSS Drop-Down Menu Module
+ *
+ * @file		dropdown.css
+ * @package		Dropdown
+ * @version		0.8
+ * @type		Transitional
+ * @stacks		597-599
+ * @browsers	Windows: IE6+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2006-2008 Live Web Institute
+ *
+ */
+
+
+
+ul.dropdown, ul.dropdown li, ul.dropdown ul {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 0;
+}
+ul.dropdown {
+    float: left;
+    position: relative;
+    z-index: 597;
+}
+ul.dropdown li {
+    float: left;
+    line-height: 1.3em;
+    vertical-align: middle;
+}
+ul.dropdown li.hover, ul.dropdown li:hover {
+    cursor: default;
+    position: relative;
+    z-index: 599;
+}
+ul.dropdown ul {
+    left: 0;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    width: 100%;
+    z-index: 598;
+}
+ul.dropdown ul li {
+    float: none;
+    position: relative !important;
+    
+}
+.webkit ul.dropdown ul li {
+    float: none;
+    background-color:red;
+   
+}
+ul.dropdown ul ul {
+    left: 99%;
+    top: 1px;
+}
+ul.dropdown li:hover > ul {
+    visibility: visible;
+}

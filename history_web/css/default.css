@@ -1,0 +1,226 @@
+@charset "UTF-8";
+
+/** 
+ * NVIDIA CSS Drop-Down Menu Theme
+ *
+ * @file    	default.css
+ * @name		NVIDIA
+ * @version		0.1
+ * @type		transitional
+ * @browsers	Windows: IE6+, Opera7+, Firefox1+
+ *				Mac OS: Safari2+, Firefox2+
+ *
+ * @link		http://www.lwis.net/
+ * @copyright	2008 Live Web Institute
+ *
+ * Module Classes: *.dir {} *.on {} *.open {} li.hover {} li.first {} li.last {}
+ * Expected directory tag - li
+ *
+ */
+
+
+/*------------------------------------------------------------------------------------------------------/
+ * @section		Base Drop-Down Styling
+ * @structure	ul (unordered list)
+ *				ul li (list item)
+ *				ul li a (links)
+ *				*(.class|:hover)
+ * @level sep	ul
+ */
+
+
+/* ----- ALL LEVELS (incl. first) */
+/*fix for webkit and ie on menu*/
+.webkit ul.submenu li ul.submenu {
+    margin-top:-22px;
+}
+.ie ul.submenu li ul.submenu {
+    margin-top:12px;
+}
+
+/*---regular dropdown ----*/
+/*Plone overrides*/
+ul.submenu li ul.submenu {
+    margin-left: 160px;
+}
+ul.submenu li ul.submenu li {
+    z-index:2;
+}
+ ul.submenu li ul.submenu li ul.submenu li {
+     z-index:3;
+ }
+ul.submenu li ul.submenu a:hover {
+
+}
+ul.dropdown {
+    font-family: "Lucida Grande",Verdana,"Times New Roman";
+    font-weight: 600;
+    text-transform: uppercase;
+}
+ul.dropdown li {
+    color: white;
+    line-height: normal;
+    padding-bottom: 7px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 7px;
+}
+ul.dropdown li.hover, ul.dropdown li:hover {
+    background-color: #367AB2;
+    color: white;
+      z-index: 1;
+}
+ul.dropdown a:link, ul.dropdown a:visited {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #FFFFFF;
+}
+ul.dropdown a:hover {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #FFFFFF;
+}
+ul.dropdown a:active {
+    color: #FFFFFF;
+}
+ul.dropdown ul {
+    background-color: #367AB2;
+    color: #FFFFFF;
+    font-size: 11px;
+    text-transform: uppercase;
+    width: 170px;
+}
+ul.dropdown ul li {
+    background-color: transparent;
+    color: #000000;
+    filter: none;
+
+}
+ul.dropdown ul a:link, ul.dropdown ul a:visited {
+    color: #FFFFFF !important;
+}
+ul.dropdown ul a:hover {
+    -moz-text-blink: none;
+    -moz-text-decoration-color: -moz-use-text-color;
+    -moz-text-decoration-line: none;
+    -moz-text-decoration-style: solid;
+    color: #FFFFFF !important;
+}
+ul.dropdown ul a:active {
+    color: #FFFFFF !important;
+}
+ul.dropdown .hasDropDown {
+    background-image: none;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    
+}
+/*-------------------------------------------------/
+ * @section   Support Class `
+ `
+ * @level sep ul, .class
+ */
+
+
+ul.dropdown *.hasDropDown {
+ 
+ background-image: url(../images/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+}
+
+
+/* -- Components override -- */
+
+ul.hasDropDown ul *.dir {
+ padding-right: 0px;
+ background-image: url(../images/nav-arrow-right.png);
+ background-position: 100% 50%;
+ background-repeat: no-repeat;
+
+}
+
+
+
+
+/* ----- END LEVEL */
+@media only screen and (max-width: 320px) {
+    
+      ul.dropdown li { 
+          display: none;
+      }
+      #nav select { 
+          display: block;
+          width:85% !important;
+margin-left:17% !important;
+margin-top:68px !important;
+         
+          
+}
+.flex-container {
+    display: none;
+    }
+ #portal-searchbox {
+     display: none;
+ }
+
+ul.dropdown li a {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size:9px;
+  }
+  ul.dropdown li{
+    margin-top:65px;
+    
+  }
+  
+ #nav.dropdown {
+    position:relative;
+
+
+  }
+  ul#nav.dropdown li {
+    
+      margin-left: 20px;
+  }
+  ul.dropdown ul {
+     font-size: 9px;
+     width:150px;
+ }
+ ul.dropdown li a {
+     padding-left:0px;
+     padding-top:8px !important;
+     padding-left: 5px !important;
+    padding-right: 5px !important;
+ }
+ ul.dropdown ul a:hover {
+    width: 136px;
+}
+ ul.submenu li ul.submenu {
+    margin-left: 136px;
+}
+ul.submenu li ul.submenu a:hover {
+    width: 136px;
+}
+#nav.dropdown li#portaltab-index_html {
+    display: none;
+    }
+ #nav.dropdown li#portaltab-message-from-the-chair {
+    display: none;
+
+}
+#nav.dropdown li#portaltab-alumnus {
+    display: none;
+    }
+
+ #nav.dropdown li#portaltab-copy_of_contact {
+    display: none;
+}
+
+}
+
+

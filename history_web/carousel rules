@@ -1,0 +1,4 @@
+   <!-- Carousel -->
+        <replace css:content-children="div.carousel-banner">
+            <xsl:copy-of select="node()"/><div class="carousel-over"></div>
+        </replace>

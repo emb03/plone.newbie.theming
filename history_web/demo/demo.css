@@ -1,0 +1,12 @@
+
+/* Media Queries
+***********************/
+@media only screen and (max-width: 650px) {
+ 
+
+  #hero #why-flexslider ul li {width: auto; padding-right: 0; float: none; font-size: 14px;}
+}
+@media only screen and (max-width: 320px) {
+ 
+
+}

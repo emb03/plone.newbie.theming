@@ -1,0 +1,168 @@
+url:http://www.history.ucla.edu/people/prof_view
+meta_type:Page Template
+title:
+content_type:text/html
+cookie:__utma=125574670.981505549.1220547316.1331138809.1331226361.367; __unam=7a4c36d-12b4092a43a-2500035c-37; __utmz=125574670.1331226361.367.73.utmcsr=computing.sscnet.ucla.edu|utmccn=(referral)|utmcmd=referral|utmcct=/labs; is_returning=1; __utmz=246481949.1331236565.184.10.utmcsr=new.history.ucla.edu|utmccn=(referral)|utmcmd=referral|utmcct=/people/faculty/contact; __utma=246481949.301373642.1322005077.1331241845.1331243798.186; dtpref_cols="100%"; SSC_SESSION=ad2304eaad276ea0a2596f5ab6b21c77; _ZopeId="63369319A5QI.6YKBKo"; s_cc=true; ev4=Marina%20Dundjerski%20%9294; s_sq=%5B%5BB%5D%5D; tree-s="eJzTyCkw5NLIKTDiClZ3hAAnP-98W3WuAmOuRKCECUjWFEW2HCRrBpY1B8laIMtmu4JkLbkSwUAPAJvlGL8"; __utmc=125574670; _ucla_sso=2012-03-08T12%3A25%3A43-08%3A00; __ac="bWFyeTohZ2FsYTk2aWRl"; __utmc=246481949; __utmb=246481949.23.10.1331243798
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<body>
+
+<!-- This template expects the Body Text of a page that uses it to be in this format:
+     A number of lines, one for each group, such as "Faculty" or "Emeriti".
+     Each "grouping" is on its own separate line.
+     Within a grouping is a comma-separated list of 3 parameters:
+     [group heading], [group name], [deptcode]
+     Whitespace is okay, but all HTML tags must be removed.
+     The easiest way to ensure this is to use the HTML view when editing the body.
+-->
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+
+    <!-- If a specific person is called, display that person's details -->
+    <tal:block tal:condition="python:'lid' in request.form">
+    <tal:block tal:define="results python:context.getprofinfo(request.form['lid'])">
+
+      <!-- If a user has gotohome set, jump directly to their homepage -->
+      <span tal:condition="python:results['gotohome'] and ['gotohome'] == 'Yes'
+                              and results['homepage'].find('?lid') == -1"
+            tal:content="python:container.REQUEST.RESPONSE.redirect(results['homepage'])">jump</span>
+
+      <h1 tal:content="results/fullname">name</h1>
+      <p><span class="facFont" tal:content="results/title">title</span>
+      <br><span class="facFont" tal:content="results/degree">degree</span></p>
+
+      <!-- Use right-aligned image if present -->
+      <img tal:condition="results/photo"
+           tal:attributes="class string:image-right profdb; src results/photo" />
+
+      <!-- Homepage is a bit tricky - don't display if it's a Plone-generated page -->
+      <p tal:condition="python:results['homepage'] and results['homepage'].find('?lid') == -1">
+        <a tal:attributes="href results/homepage">Homepage</a>
+      </p>
+
+      <!-- Contact info -->
+      <p>
+        <span tal:condition="results/office"
+              tal:replace="structure string:Office: ${results/office}<br />">office</span>
+        <span tal:condition="results/phone"
+              tal:replace="structure string:Phone: ${results/phone}<br />">phone</span>
+        Fax: <span tal:condition="results/fax" tal:replace="results/fax">fax</span>
+             <span tal:condition="not: results/fax">310-206-9630</span><br />
+        <span tal:condition="results/email">E-mail:
+          <a tal:content="python:results['email'].lower()"
+             tal:attributes="href python:'mailto:' + results['email'].lower()">email</a><br />
+        </span>
+      </p>
+
+      <!-- Mailing address: use dept address if a specific one isn't used -->
+      <p>Mailing Address:</p>
+      <div tal:condition="results/address" tal:content="structure results/address"
+           style="margin-left: 1em;">address</div>
+      <div tal:condition="not:results/address" style="margin-left: 1em;">
+        UCLA Department of History<br />
+        6265 Bunche Hall<br />
+        Box 951473<br />
+        Los Angeles, CA 90095-1473
+      </div>
+      <br />
+
+      <!-- Links to Curriculum Vitae and class sites -->
+      <p tal:condition="results/vita">
+        <a tal:attributes="href results/vita">Curriculum Vitae</a>
+      </p>
+      <p><a tal:attributes="href string:http://www.sscnet.ucla.edu/classes/profbylid.php?lid=${request/form/lid}">
+        Class Websites</a>
+      </p>
+
+      <!-- Other additional fields -->
+      <span tal:condition="results/subfields">
+        <h3>Field</h3>
+        <p tal:content="structure results/subfields">subfields</p>
+      </span>
+      <span tal:condition="results/research">
+        <h3>Research Interests</h3>
+        <p tal:content="structure results/research">research</p>
+      </span>
+      <span tal:condition="results/notes">
+        <h3>Notes</h3>
+        <p tal:content="structure results/notes">notes</p>
+      </span>
+      <span tal:condition="results/publications">
+        <h3>Selected Publications</h3>
+        <p tal:content="structure results/publications">publications</p>
+      </span>
+      <span tal:condition="results/grants">
+        <h3>Grants</h3>
+        <p tal:content="structure results/grants">grants</p>
+      </span>
+      <span tal:condition="results/awards">
+        <h3>Awards</h3>
+        <p tal:content="structure results/awards">awards</p>
+      </span>
+      <span tal:condition="results/grad_students">
+        <h3>Grad Students</h3>
+        <p tal:content="structure results/grad_students">grad_students</p>
+      </span>
+
+      <!-- Link to edit prof, sends the user off-site -->
+      <hr />
+      <a tal:attributes="href string:http://www.history.ucla.edu/facultyplain.php?lid=${request/form/lid}&edit=1">
+        Edit This Page</a>
+
+    </tal:block>
+    </tal:block>
+
+    <!-- If no person is specified, show the whole list -->
+    <tal:block tal:condition="python:'lid' not in request.form">
+      <!-- Split text into lines, one for each group, one div per group -->
+      <div class="profdb" tal:repeat="group python:context.getText().split('\n')">
+
+        <!-- Get per-group parameters -->
+        <tal:block tal:define="params python:group.split(',')">
+
+          <!-- First param: header to display -->
+          <h1 tal:content="python:params[0].strip()">heading</h1>
+          <ul class="profdb">
+
+            <!-- Repeat results of query, passing prof type and deptcode as parameters to getproflist -->
+            <li tal:repeat="row python:context.getproflist(params[1].strip(), params[2].strip())">
+            <tal:block tal:condition="python:row.lastname != 'MYERS' or row.title != 'PROFESSOR & DEPARTMENT CHAIR'">
+            <!-- Hubert requested that Prof Friedlander be listed as Professor Emeritus, can't remove this piece of code without breaking the display. Changing exclude to look like mispelling -->
+            <tal:block tal:condition="python:row.lastname != 'FRIEDLANDE' or row.title != 'Distinguished Professor Emeritus'">
+           <tal:block>
+
+              <!-- Format name, stripping whitespace, capitalizing words, and converting charset -->
+              <a tal:content="python:('%s, %s %s' % (row.lastname, row.firstname, row.middlename)
+                                     ).decode('windows-1252').title().strip()"
+                 tal:attributes="href string:${context/id}?lid=${row/lid}">name</a
+
+              ><!-- Include lowercased email, title, and subfields (if present) --
+              ><span tal:condition="row/email"> -
+                <a tal:content="python:row.email.lower()"
+                   tal:attributes="href python:'mailto:' + row.email.lower()">email</a></span>
+<!-- Commented out the following line because David Myers had Professor showing up twice on Faculty list webpage.  May need to add back in on October 1st. -->
+              <!-- <span tal:condition="python:row.lid == 731"
+                            tal:content="python:' (' + row.title.title() + ')'">title</span> -->
+              <span tal:condition="python:row.title and row.title != 'PROFESSOR EMERITUS'"
+                     tal:content="python:' (' + row.title.title() + ')'">title</span
+              ><span tal:condition="row/subfields" style="font-style: italic;"
+                     tal:content="python:', ' + row.subfields.decode('windows-1252')">subfields
+              </span>
+            </tal:block>
+           </tal:block>
+            </tal:block>
+            </li>
+          </ul>
+        </tal:block>
+      </div>
+    </tal:block>
+
+  </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
